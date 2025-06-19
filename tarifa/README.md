@@ -1,0 +1,1 @@
+Proyecto de web scrapping que extrae tarifas dac provenientes de CFE y retorna los valores en tablas organizadas con la información precisa, siempre hasta el mes mas reciente y convertida en un archivo excel
