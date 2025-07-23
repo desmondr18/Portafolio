@@ -1,0 +1,2 @@
+async_playwright
+pandas
