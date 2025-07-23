@@ -1,115 +1,81 @@
-# Proyecto: Análisis de Datos de Embarazo en México
+# Portafolio de Proyectos - Desmond Rodríguez
 
-Este proyecto realiza un análisis exploratorio de datos sobre nacimientos y embarazos en México durante los años 2020, 2021, 2022 y 2023. Se procesan archivos CSV oficiales que contienen información como edad de la madre, estado conyugal, entidad federativa del parto, entre otros.
-
-El objetivo principal es generar visualizaciones, estadísticas y reportes que permitan identificar patrones, tendencias y problemáticas como la mortalidad materna o el crecimiento de embarazos en menores de edad.
+Este repositorio contiene una colección de proyectos orientados al análisis de datos, automatización de procesos administrativos y visualización interactiva de información. Está compuesto por herramientas desarrolladas en Python, con interfaz gráfica o ejecución directa, y pensadas para usuarios técnicos y no técnicos.
 
 ---
 
-## Contenido
+## Proyectos Incluidos
 
-- [Instalación](#instalación)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Dependencias](#dependencias)
-- [Funciones](#funciones)
-- [Ejemplo de Ejecución](#ejemplo-de-ejecución)
+### 📄 `facturas/`
+
+Herramienta que permite seleccionar una carpeta con archivos `.xml` de facturas CFDI (Comprobante Fiscal Digital por Internet). Extrae la información fiscal relevante como:
+
+- RFC emisor y receptor
+- Fecha de emisión
+- Conceptos facturados
+- Totales (subtotal, IVA, total)
+
+El resultado se muestra en pantalla y puede exportarse. Incluye ejecutable listo para uso sin necesidad de instalar dependencias.
+
+### 📅 `tarifa/`
+
+Proyecto de web scraping que obtiene las **tarifas DAC** (Doméstico de Alto Consumo) directamente desde el portal oficial de la CFE. El programa:
+
+- Extrae los datos hasta el mes más reciente
+- Organiza la información en tablas
+- Exporta los resultados a un archivo Excel (`.xlsx`)
+
+Este proyecto también está disponible como ejecutable.
+
+### 📆 `nacimientos/`
+
+Análisis exploratorio de datos de embarazos en México entre 2020 y 2023. El script carga varios archivos CSV y genera:
+
+- Gráficas por edad de la madre
+- Estadísticas de mortalidad materna
+- Comparación de madres solteras vs casadas
+- Gráfica por estados
+- Mapa de calor por fecha de nacimiento
+
+Utiliza `pandas`, `matplotlib`, `seaborn` y `rich`. Puedes consultar el README específico dentro de esta carpeta.
+
+### 📊 `powerBi/`
+
+Contiene visualizaciones desarrolladas en Power BI para presentación de datos. Incluye reportes interactivos con filtros, segmentaciones y métricas diseñadas para análisis visual y toma de decisiones.
 
 ---
 
-## Instalación
+## Tecnologías usadas
 
-Clona este repositorio y asegúrate de colocar los archivos CSV en la carpeta `csv/`:
+- Python 3
+- pandas, matplotlib, seaborn, rich
+- Web scraping con `requests` y `BeautifulSoup`
+- GUI con `tkinter` (facturas)
+- Power BI (dashboards interactivos)
+
+---
+
+## Ejecución
+
+Para los scripts en Python:
 
 ```bash
-git clone https://github.com/desmondr18/Portafolio.git
-cd nacimientos
-mkdir csv
-# Coloca tus archivos CSV aquí
+pip install -r requirements.txt
+python script.py
 ```
 
-Instala las dependencias necesarias:
-
-```bash
-pip install pandas matplotlib seaborn rich
-```
+Para los ejecutables, basta con hacer doble clic sobre el `.exe` correspondiente.
 
 ---
 
-## Estructura del Proyecto
+## Autor
 
-```
-proyecto-embarazos/
-├── csv/                # Archivos CSV de entrada
-├── main.py            # Script principal
-├── README.md          # Documentación del proyecto
-```
-
----
-
-## Dependencias
-
-- `pandas`
-- `matplotlib`
-- `seaborn`
-- `rich`
-
----
-
-## Funciones
-
-### `promedioMuertesEmbarazo()`
-
-Calcula el total de nacimientos, muertes maternas y porcentaje de mortalidad por parto. Muestra los resultados en una tabla con formato amigable usando `rich`.
-
-### `contMadresSolteras()`
-
-Compara el número de madres solteras y casadas por año. Visualiza los datos en una gráfica de barras.
-
-### `contarMayoresMenores(df)`
-
-Devuelve un resumen con el número de embarazos en menores y mayores de edad a partir de la columna `EDAD_Num`.
-
-### `edades()`
-
-Grafica la distribución de embarazos por edad materna. Muestra la cantidad de embarazos para cada edad hasta 98 años.
-
-### `lugaresNacimiento()`
-
-Cuenta los embarazos por entidad federativa del parto. Genera una gráfica ordenada por cantidad.
-
-### `fechaNac()`
-
-Cuenta los nacimientos por mes a partir de la fecha. Muestra una tabla con el total por mes.
-
-### `mapaCalor()`
-
-Genera un mapa de calor con el promedio de nacimientos por cada día del año. Ideal para detectar patrones estacionales.
-
-### `limpiezaCSV(file, x)`
-
-Carga columnas relevantes de un CSV y añade el año correspondiente a los datos para consolidarlos posteriormente.
-
----
-
-## Ejemplo de Ejecución
-
-```python
-# Cargar y limpiar CSV
-for x, file in enumerate(csv_files):
-    limpiezaCSV(file, x)
-final_df = pd.concat(datos_limpios, ignore_index=True)
-
-# Llamar funciones de análisis
-promedioMuertesEmbarazo()
-contMadresSolteras()
-edades()
-lugaresNacimiento()
-mapaCalor()
-```
+Desmond Rodríguez\
+[GitHub: desmondr18](https://github.com/desmondr18)
 
 ---
 
 ## Licencia
 
-Este proyecto se distribuye bajo la licencia MIT. Puedes modificar, compartir y usar el código libremente.
+Este portafolio se comparte bajo licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente.
 
