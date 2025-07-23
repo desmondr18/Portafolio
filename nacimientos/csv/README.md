@@ -7,3 +7,7 @@ http://www.dgis.salud.gob.mx/descargas/datosabiertos/nacimientos/sinac_2023.zip?
 Si deseas obtener mas datos fuera de los años 2020-2024 tambien puedes hacerlo en esta liga:
 http://www.dgis.salud.gob.mx/contenidos/basesdedatos/da_nacimientos_gobmx.html
 Estos datos deberan ser limpiados de manera distinta y a su vez almacenados ya que solo se trabaja con datos recientes dentro de este proyecto
+
+
+Otra manera de obtener los datos comprimidos y almacenados es atraves del siguiente link:
+https://drive.google.com/file/d/1aWFRcNWM5rTbsbsV9ARUiMfg9S9HHzfz/view?usp=drive_link
